@@ -1,4 +1,4 @@
-package com.ecommerce.project.model;
+package com.ecommerece.project.model;
 
 public enum AppRole {
     ROLE_USER,

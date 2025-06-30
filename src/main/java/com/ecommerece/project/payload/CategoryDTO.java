@@ -1,6 +1,5 @@
 package com.ecommerece.project.payload;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

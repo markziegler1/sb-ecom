@@ -1,4 +1,4 @@
-package com.ecommerce.project.model;
+package com.ecommerece.project.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
