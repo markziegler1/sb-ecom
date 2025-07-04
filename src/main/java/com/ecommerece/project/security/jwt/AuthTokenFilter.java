@@ -32,8 +32,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
         // Skip JWT processing for public endpoints
         return path.startsWith("/api/public/") || 
-               path.startsWith("/api/auth/") || 
-               path.startsWith("/h2-console/");
+               path.startsWith("/api/auth/");
     }
 
     @Override

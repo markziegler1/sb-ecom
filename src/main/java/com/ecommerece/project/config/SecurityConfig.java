@@ -71,12 +71,8 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/public/**").permitAll()
-                .requestMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated()
             );
-
-        // Allow H2 console frames
-        http.headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
 
         // Add JWT filter only for authenticated endpoints
         http.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
