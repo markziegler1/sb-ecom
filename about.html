@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mark Ziegler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar {
+            background: #2c5aa0;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem 4rem;
+        }
+        
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .about-section h1 {
+            color: #2c5aa0;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .skill {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #2c5aa0;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #1e3f6b;
+        }
+        
+        .footer {
+            background: #2c5aa0;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Mark Ziegler</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../ecommerce.html">🛒 Store</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="about-section">
+            <h1>About Me</h1>
+            <p>Hello! I'm Mark Ziegler, a passionate full-stack developer with expertise in modern web technologies. I specialize in building scalable, user-friendly applications that solve real-world problems.</p>
+            
+            <h2>My Journey</h2>
+            <p>With over 5 years of experience in software development, I've worked on projects ranging from small business websites to complex enterprise applications. My passion lies in creating elegant solutions that combine cutting-edge technology with intuitive user experiences.</p>
+            
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h3>Backend</h3>
+                    <p>Spring Boot, Java, PostgreSQL, MySQL, REST APIs</p>
+                </div>
+                <div class="skill">
+                    <h3>Frontend</h3>
+                    <p>React, JavaScript, HTML5, CSS3, Responsive Design</p>
+                </div>
+                <div class="skill">
+                    <h3>DevOps</h3>
+                    <p>Docker, AWS, GitHub Actions, CI/CD</p>
+                </div>
+                <div class="skill">
+                    <h3>Tools</h3>
+                    <p>Git, Maven, VS Code, IntelliJ IDEA</p>
+                </div>
+            </div>
+            
+            <h2>What I Do</h2>
+            <p>I help businesses and individuals bring their digital ideas to life. Whether you need a simple website, a complex web application, or an eCommerce platform, I can build it from concept to deployment.</p>
+            
+            <p>My approach focuses on:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Clean, maintainable code</li>
+                <li>User-centered design</li>
+                <li>Performance optimization</li>
+                <li>Security best practices</li>
+                <li>Scalable architecture</li>
+            </ul>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="contact.html" class="btn">Get In Touch</a>
+                <a href="../ecommerce.html" class="btn">View My Work</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mark Ziegler. All rights reserved.</p>
+    </footer>
+</body>
+</html> 
