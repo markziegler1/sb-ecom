@@ -1,0 +1,90 @@
+# AWS Infrastructure as Code (CloudFormation-like structure)
+# This is a reference for setting up enterprise-grade infrastructure
+
+# ===== AWS SERVICES CONFIGURATION =====
+
+# 1. RDS PostgreSQL Database
+# - Multi-AZ deployment for high availability
+# - Automated backups and point-in-time recovery
+# - Encryption at rest and in transit
+# - Performance Insights enabled
+# - Monitoring and alerting
+
+# 2. ElastiCache Redis
+# - Redis cluster for caching
+# - Multi-AZ for high availability
+# - Automatic failover
+# - Encryption at rest and in transit
+
+# 3. Application Load Balancer
+# - SSL/TLS termination
+# - Health checks
+# - Auto-scaling integration
+# - WAF integration for security
+
+# 4. ECS Fargate (Serverless Containers)
+# - Auto-scaling based on CPU/memory
+# - Blue-green deployments
+# - Rolling updates
+# - Health checks and monitoring
+
+# 5. CloudWatch Monitoring
+# - Custom metrics
+# - Log aggregation
+# - Alerting and notifications
+# - Performance dashboards
+
+# 6. S3 for File Storage
+# - Static file hosting
+# - Image storage
+# - Backup storage
+# - CDN integration (CloudFront)
+
+# ===== ENVIRONMENT VARIABLES =====
+# These should be set in AWS Systems Manager Parameter Store
+# or AWS Secrets Manager for production
+
+# Database Configuration
+# - RDS_ENDPOINT: Your RDS PostgreSQL endpoint
+# - RDS_USERNAME: Database username
+# - RDS_PASSWORD: Database password (from Secrets Manager)
+# - RDS_DATABASE: Database name
+
+# Redis Configuration
+# - REDIS_ENDPOINT: Your ElastiCache Redis endpoint
+# - REDIS_PASSWORD: Redis password (from Secrets Manager)
+
+# JWT Configuration
+# - JWT_SECRET: JWT signing secret (from Secrets Manager)
+# - JWT_EXPIRATION: Token expiration time
+
+# Application Configuration
+# - ALLOWED_ORIGINS: CORS allowed origins
+# - LOG_LEVEL: Application log level
+# - ENVIRONMENT: Production/Staging/Development
+
+# ===== SECURITY GROUPS =====
+# - Database: Only allow connections from application layer
+# - Application: Allow HTTP/HTTPS from ALB
+# - Redis: Only allow connections from application layer
+# - ALB: Allow HTTP/HTTPS from internet
+
+# ===== MONITORING & ALERTING =====
+# - CPU utilization > 80%
+# - Memory utilization > 80%
+# - Database connections > 80%
+# - Response time > 2 seconds
+# - Error rate > 5%
+# - Disk space > 80%
+
+# ===== BACKUP STRATEGY =====
+# - Database: Automated daily backups with 7-day retention
+# - Application: Container images in ECR
+# - Files: S3 versioning enabled
+# - Logs: CloudWatch log retention 30 days
+
+# ===== SCALING STRATEGY =====
+# - CPU-based auto-scaling (70% threshold)
+# - Memory-based auto-scaling (80% threshold)
+# - Custom metrics for business logic
+# - Scheduled scaling for predictable loads 

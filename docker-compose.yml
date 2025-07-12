@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: sb-ecom-postgres
+    environment:
+      POSTGRES_DB: sb_ecom_db
+      POSTGRES_USER: sb_ecom_user
+      POSTGRES_PASSWORD: sb_ecom_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - sb-ecom-network
+
+  # Redis for Caching
+  redis:
+    image: redis:7-alpine
+    container_name: sb-ecom-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - sb-ecom-network
+
+  # Application
+  app:
+    build: .
+    container_name: sb-ecom-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/sb_ecom_db
+      SPRING_DATASOURCE_USERNAME: sb_ecom_user
+      SPRING_DATASOURCE_PASSWORD: sb_ecom_password
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - sb-ecom-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  sb-ecom-network:
+    driver: bridge 
