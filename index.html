@@ -3,178 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple eCommerce - GitHub Pages</title>
+    <title>Mark Ziegler - eCommerce Project</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             background-color: #f5f5f5;
+            line-height: 1.6;
         }
-        .header {
+        .container {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
         }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .product {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .product:hover {
-            transform: translateY(-2px);
-        }
-        .product img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .price {
-            font-size: 1.5em;
+        h1 {
             color: #2c5aa0;
-            font-weight: bold;
+            margin-bottom: 20px;
         }
         .btn {
+            display: inline-block;
             background: #2c5aa0;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background 0.3s;
         }
         .btn:hover {
             background: #1e3f6b;
         }
-        .cart {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
         }
-        .cart-count {
-            background: #e74c3c;
-            color: white;
-            border-radius: 50%;
-            padding: 2px 8px;
-            font-size: 12px;
-            margin-left: 5px;
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+        }
+        .feature h3 {
+            color: #2c5aa0;
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🛍️ Simple eCommerce</h1>
-        <p>Running entirely on GitHub Pages - No backend needed!</p>
-    </div>
+    <div class="container">
+        <h1>🛍️ eCommerce Project</h1>
+        <p>Welcome to my Spring Boot eCommerce project! This is a full-stack eCommerce application built with modern technologies.</p>
+        
+        <div style="margin: 30px 0;">
+            <a href="ecommerce.html" class="btn">🛒 Visit eCommerce Store</a>
+        </div>
 
-    <div class="cart">
-        🛒 Cart <span class="cart-count" id="cartCount">0</span>
-    </div>
+        <div class="features">
+            <div class="feature">
+                <h3>🛍️ Frontend</h3>
+                <p>Modern, responsive eCommerce store with product catalog and shopping cart functionality.</p>
+            </div>
+            <div class="feature">
+                <h3>⚙️ Backend</h3>
+                <p>Spring Boot REST API with JWT authentication, PostgreSQL database, and comprehensive eCommerce features.</p>
+            </div>
+            <div class="feature">
+                <h3>🚀 Deployment</h3>
+                <p>Multiple deployment options: GitHub Pages (free), Railway, Render, or AWS for production.</p>
+            </div>
+        </div>
 
-    <div id="products" class="products">
-        <div style="text-align: center; padding: 40px; grid-column: 1 / -1;">
-            Loading products...
+        <h2>📋 Project Features</h2>
+        <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+            <li>✅ User authentication and authorization</li>
+            <li>✅ Product catalog with categories</li>
+            <li>✅ Shopping cart functionality</li>
+            <li>✅ Order management</li>
+            <li>✅ Payment processing</li>
+            <li>✅ Admin dashboard</li>
+            <li>✅ Responsive design</li>
+            <li>✅ RESTful API</li>
+        </ul>
+
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p><strong>Technologies Used:</strong></p>
+            <p>Spring Boot • Java 21 • PostgreSQL • JWT • HTML/CSS/JavaScript • Maven</p>
         </div>
     </div>
-
-    <script>
-        // Mock data - no backend needed!
-        const products = [
-            {
-                id: 1,
-                name: "Wireless Headphones",
-                description: "High-quality wireless headphones with noise cancellation",
-                price: 99.99,
-                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop"
-            },
-            {
-                id: 2,
-                name: "Smartphone",
-                description: "Latest smartphone with advanced camera system",
-                price: 699.99,
-                image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=200&fit=crop"
-            },
-            {
-                id: 3,
-                name: "Laptop",
-                description: "Powerful laptop for work and gaming",
-                price: 1299.99,
-                image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=200&fit=crop"
-            },
-            {
-                id: 4,
-                name: "Smart Watch",
-                description: "Fitness tracking and notifications on your wrist",
-                price: 199.99,
-                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop"
-            },
-            {
-                id: 5,
-                name: "Wireless Earbuds",
-                description: "Compact wireless earbuds with great sound quality",
-                price: 79.99,
-                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&h=200&fit=crop"
-            },
-            {
-                id: 6,
-                name: "Tablet",
-                description: "Versatile tablet for entertainment and productivity",
-                price: 399.99,
-                image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=200&fit=crop"
-            }
-        ];
-
-        let cart = [];
-
-        function loadProducts() {
-            const productsDiv = document.getElementById('products');
-            productsDiv.innerHTML = '';
-            
-            products.forEach(product => {
-                productsDiv.innerHTML += `
-                    <div class="product">
-                        <img src="${product.image}" alt="${product.name}">
-                        <h3>${product.name}</h3>
-                        <p>${product.description}</p>
-                        <div class="price">$${product.price}</div>
-                        <button class="btn" onclick="addToCart(${product.id})">Add to Cart</button>
-                    </div>
-                `;
-            });
-        }
-
-        function addToCart(productId) {
-            const product = products.find(p => p.id === productId);
-            if (product) {
-                cart.push(product);
-                updateCartCount();
-                alert(`Added ${product.name} to cart!`);
-            }
-        }
-
-        function updateCartCount() {
-            document.getElementById('cartCount').textContent = cart.length;
-        }
-
-        // Load products when page loads
-        loadProducts();
-    </script>
 </body>
 </html> 
